@@ -1,0 +1,11 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+<h1>Create New Item</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <h2>Are you sure to delete {{ product.description }} </h2>
+    <button type="submit">confirm</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+
+<ul>
+    {% for product in products %}
+        <a href="{% url 'update' product.id %}">
+            <li>{{ product.description }} {{ product.quantity }} {{ product.price }}</li>
+        </a>
+
+
+    {% if product %}
+        <a href="{% url 'delete' product.id %}">Delete</a>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
